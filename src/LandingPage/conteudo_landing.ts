@@ -1,6 +1,27 @@
 export const linkContato = "https://wa.me/5511999999999";
 
 export const imagemDouglas = "/images/douglas-couto.jpg";
+export const imagemOgLargura = 1672;
+export const imagemOgAltura = 941;
+export const imagemOgAlt =
+  "Douglas Couto, especialista em estratégias tributárias federais — RX3 Soluções Tributárias e Governança";
+
+function origemSite(): string {
+  const configurada = import.meta.env.VITE_SITE_URL;
+  if (typeof configurada === "string" && configurada.length > 0) {
+    return configurada.replace(/\/$/, "");
+  }
+
+  const vercel = typeof process !== "undefined" ? process.env.VERCEL_URL : undefined;
+  if (vercel) return `https://${vercel}`;
+
+  return "";
+}
+
+export function urlAbsoluta(caminho: string): string {
+  const origem = origemSite();
+  return origem ? `${origem}${caminho}` : caminho;
+}
 
 export const tributosFederais = ["PIS", "COFINS", "CSLL", "IRPJ", "IPI"];
 

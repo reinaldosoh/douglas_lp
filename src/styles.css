@@ -149,6 +149,7 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    overflow-x: hidden;
   }
 }
 
@@ -169,6 +170,10 @@
 
 @utility marquee {
   animation: marquee 90s linear infinite;
+}
+
+@utility marquee-lento {
+  animation: marquee 140s linear infinite;
 }
 
 @keyframes fade-up {

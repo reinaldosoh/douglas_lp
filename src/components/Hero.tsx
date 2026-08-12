@@ -58,9 +58,7 @@ export function Hero() {
             <h1 className="font-display text-[2.6rem] leading-[1.04] text-foreground sm:text-6xl lg:text-[4.6rem]">
               Conhecimento
               <br />
-              federal que
-              <br />
-              vira caixa<span className="text-primary">.</span>
+              federal que vira caixa<span className="text-primary">.</span>
             </h1>
 
             <p className="mt-6 max-w-lg text-[15px] leading-relaxed text-muted-foreground sm:mt-8">

@@ -1,41 +1,34 @@
 import { createFileRoute } from "@tanstack/react-router";
-import {
-  imagemDouglas,
-  imagemOgAlt,
-  imagemOgAltura,
-  imagemOgLargura,
-  urlAbsoluta,
-} from "../LandingPage/conteudo_landing";
-import { PaginaLanding } from "../LandingPage/pagina_landing";
+import { Hero } from "@/components/Hero";
+import { Clients } from "@/components/Clients";
 
-const titulo = "Douglas Couto | RX3 — Menos impostos. Mais caixa.";
-const descricao =
-  "Especialista em estratégias tributárias federais. Diagnóstico de PIS, COFINS, CSLL, IRPJ, IPI e Lei do Bem para reduzir legalmente a carga tributária e preservar caixa.";
+const TITLE = "Douglas Couto — Conhecimento federal que vira caixa";
+const DESCRIPTION =
+  "Especialista tributário com experiência no Governo Federal. Lei do Bem, PIS, COFINS, CSLL, IRPJ e IPI aplicados para gerar resultado nas empresas.";
+const OG_IMAGE = "/og-douglas-couto.png";
 
 export const Route = createFileRoute("/")({
-  head: () => {
-    const imagemCompartilhamento = urlAbsoluta(imagemDouglas);
-    const urlPagina = urlAbsoluta("/");
-
-    return {
-      meta: [
-        { title: titulo },
-        { name: "description", content: descricao },
-        { property: "og:title", content: titulo },
-        { property: "og:description", content: descricao },
-        { property: "og:type", content: "website" },
-        { property: "og:url", content: urlPagina },
-        { property: "og:image", content: imagemCompartilhamento },
-        { property: "og:image:width", content: String(imagemOgLargura) },
-        { property: "og:image:height", content: String(imagemOgAltura) },
-        { property: "og:image:alt", content: imagemOgAlt },
-        { name: "twitter:card", content: "summary_large_image" },
-        { name: "twitter:title", content: titulo },
-        { name: "twitter:description", content: descricao },
-        { name: "twitter:image", content: imagemCompartilhamento },
-        { name: "twitter:image:alt", content: imagemOgAlt },
-      ],
-    };
-  },
-  component: PaginaLanding,
+  head: () => ({
+    meta: [
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://www.douglascouto.com/" },
+      { property: "og:image", content: OG_IMAGE },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: OG_IMAGE },
+    ],
+  }),
+  component: Index,
 });
+
+function Index() {
+  return (
+    <main>
+      <Hero />
+      <Clients />
+    </main>
+  );
+}

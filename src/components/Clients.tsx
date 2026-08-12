@@ -1,6 +1,7 @@
 import { Crosshair, FileCheck2, BarChart3 } from "lucide-react";
 import { LogoMarquee } from "./LogoMarquee";
 import { LINK_WHATSAPP } from "@/Compartilhados/link_whatsapp";
+import { DisplayText } from "@/lib/display-text";
 
 
 const CLIENTS = [
@@ -65,7 +66,7 @@ export function Clients() {
             <article key={title} className="border border-border p-6 sm:p-8">
               <Icon className="h-8 w-8 stroke-[1] text-primary sm:h-9 sm:w-9" />
               <h3 className="font-display mt-5 text-lg leading-snug text-foreground sm:mt-6 sm:text-xl">
-                {title}
+                <DisplayText>{title}</DisplayText>
               </h3>
               <div className="mt-4 h-px w-10 bg-primary/40" />
               <p className="mt-4 text-sm font-medium leading-relaxed text-foreground">{subtitle}</p>
@@ -81,7 +82,8 @@ export function Clients() {
 
         <div className="mt-14 border-y border-border py-10 sm:mt-20 sm:py-14">
           <p className="font-display text-[2rem] leading-none text-foreground sm:text-4xl lg:text-5xl">
-            R$ 8,2 BILHÕES<span className="text-primary">+</span>
+            <DisplayText>R$ 8,2 BILHÕES</DisplayText>
+            <span className="font-display-nums text-primary">+</span>
           </p>
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:mt-5">
             em operações tributárias, financeiras e públicas estruturadas ao longo da trajetória.

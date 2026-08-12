@@ -23,18 +23,27 @@ const CLIENTS = [
 const PILLARS = [
   {
     icon: Crosshair,
-    title: "Diagnóstico Tributário",
-    text: "Mapeamento de oportunidades e riscos com foco em resultado econômico.",
+    title: "DIAGNÓSTICO 360°",
+    subtitle: "O GPS financeiro e tributário da sua empresa.",
+    body:
+      "Um dossiê estratégico padrão Big Four analisa os últimos 5 anos e projeta os próximos 10, transformando números, riscos e oportunidades em um mapa claro para orientar as decisões do empresário.",
+    closing: "Conheça onde sua empresa está, onde pode chegar e o caminho para chegar lá.",
   },
   {
     icon: FileCheck2,
-    title: "Benefícios e Incentivos",
-    text: "Estruturação de oportunidades previstas em lei, com segurança e governança.",
+    title: "MENOS IMPOSTOS. MAIS CAIXA.",
+    subtitle: "Descubra benefícios que sua empresa pode estar deixando de aproveitar.",
+    body:
+      "Mapeamos incentivos, convênios federais, benefícios e imunidades tributárias aplicáveis ao negócio para identificar oportunidades legais de redução da carga tributária e preservação de caixa.",
+    closing:
+      "Antes de buscar dinheiro fora, descubra quanto pode estar deixando dentro da empresa.",
   },
   {
     icon: BarChart3,
-    title: "Eficiência de Caixa",
-    text: "Tributação tratada como alavanca de margem, liquidez e performance.",
+    title: "PLANEJAMENTO COM GARANTIA",
+    subtitle: "Estratégia tributária acompanhada de proteção patrimonial.",
+    body:
+      "Nas operações estruturadas de compensação, o planejamento poderá contar com cessão nominal de direitos creditórios ao cliente, por meio de estrutura de FIDC, em valor equivalente à operação, conforme os instrumentos e condições aplicáveis.",
   },
 ];
 
@@ -52,14 +61,35 @@ export function Clients() {
         </p>
 
         <div className="mt-10 grid gap-5 sm:mt-14 sm:gap-6 md:grid-cols-3">
-          {PILLARS.map(({ icon: Icon, title, text }) => (
+          {PILLARS.map(({ icon: Icon, title, subtitle, body, closing }) => (
             <article key={title} className="border border-border p-6 sm:p-8">
               <Icon className="h-8 w-8 stroke-[1] text-primary sm:h-9 sm:w-9" />
-              <h3 className="font-display mt-5 text-xl text-foreground sm:mt-6">{title}</h3>
+              <h3 className="font-display mt-5 text-lg leading-snug text-foreground sm:mt-6 sm:text-xl">
+                {title}
+              </h3>
               <div className="mt-4 h-px w-10 bg-primary/40" />
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{text}</p>
+              <p className="mt-4 text-sm font-medium leading-relaxed text-foreground">{subtitle}</p>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{body}</p>
+              {closing ? (
+                <p className="mt-4 border-t border-border pt-4 text-sm leading-relaxed text-foreground/90">
+                  {closing}
+                </p>
+              ) : null}
             </article>
           ))}
+        </div>
+
+        <div className="mt-14 border-y border-border py-10 sm:mt-20 sm:py-14">
+          <p className="font-display text-[2rem] leading-none text-foreground sm:text-4xl lg:text-5xl">
+            R$ 8,2 BILHÕES<span className="text-primary">+</span>
+          </p>
+          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:mt-5">
+            em operações tributárias, financeiras e públicas estruturadas ao longo da trajetória.
+          </p>
+          <p className="mt-5 max-w-2xl text-sm leading-relaxed text-foreground/90 sm:mt-6">
+            Experiência que conecta conhecimento institucional, estratégia tributária e resultado
+            econômico.
+          </p>
         </div>
 
         <div className="mt-14 sm:mt-20">

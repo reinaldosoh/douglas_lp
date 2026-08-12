@@ -49,6 +49,22 @@ export function Hero() {
           </a>
         </header>
 
+        <div className="fade-up relative mx-auto w-full min-w-0 max-w-xs sm:max-w-sm lg:hidden">
+          <div className="absolute -inset-2 border border-primary/25 sm:-inset-3" />
+          <div className="relative overflow-hidden">
+            <img
+              src={IMAGEM_DOUGLAS}
+              alt="Douglas Couto, especialista em incentivos fiscais"
+              className="aspect-[4/5] w-full object-cover object-[50%_18%]"
+              width={1020}
+              height={1024}
+              fetchPriority="high"
+              decoding="async"
+            />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+          </div>
+        </div>
+
         <div className="grid min-w-0 flex-1 items-center gap-8 pb-12 pt-4 sm:gap-14 sm:pb-24 sm:pt-6 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
           <div className="fade-up min-w-0">
             <p className="mb-5 text-[10px] tracking-[0.28em] text-primary sm:mb-8 sm:text-[11px] sm:tracking-[0.32em]">
@@ -61,18 +77,21 @@ export function Hero() {
               federal que vira caixa<span className="text-primary">.</span>
             </h1>
 
-            <p className="mt-6 max-w-lg text-[15px] leading-relaxed text-muted-foreground sm:mt-8">
-              Experiência construída no ambiente institucional federal, aplicada para identificar
-              oportunidades tributárias, reduzir ineficiências e gerar resultado financeiro para
-              empresas.
-            </p>
+            <div className="mt-6 max-w-lg space-y-3 text-[15px] leading-relaxed text-muted-foreground sm:mt-8">
+              <p>Conhecimento federal que vira caixa.</p>
+              <p>
+                Décadas de experiência no ambiente institucional federal transformadas em
+                inteligência para empresas: identificar oportunidades previstas na legislação,
+                reduzir ineficiências tributárias e preservar capital.
+              </p>
+            </div>
 
             <EspecialidadesMarquee />
 
             <BotoesHero className="mt-9 sm:mt-12" />
           </div>
 
-          <div className="fade-up relative mx-auto w-full min-w-0 max-w-sm sm:max-w-md">
+          <div className="fade-up relative mx-auto hidden w-full min-w-0 max-w-sm lg:block sm:max-w-md">
             <div className="absolute -inset-2 border border-primary/25 sm:-inset-3" />
             <div className="relative overflow-hidden">
               <img

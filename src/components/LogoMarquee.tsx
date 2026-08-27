@@ -6,7 +6,7 @@ interface LogoMarqueeProps {
 }
 
 export function LogoMarquee({ className }: LogoMarqueeProps) {
-  const duplicatedLogos = [...LOGOS_CLIENTES, ...LOGOS_CLIENTES, ...LOGOS_CLIENTES, ...LOGOS_CLIENTES];
+  const duplicatedLogos = [...LOGOS_CLIENTES, ...LOGOS_CLIENTES];
 
   return (
     <div className={cn("relative w-full overflow-hidden", className)}>

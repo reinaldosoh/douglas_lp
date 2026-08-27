@@ -8,6 +8,7 @@ const DESCRIPTION =
 const OG_IMAGE = "/og-douglas-couto.png";
 
 export const Route = createFileRoute("/")({
+  prerender: true,
   head: () => ({
     meta: [
       { title: TITLE },

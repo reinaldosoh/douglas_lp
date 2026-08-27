@@ -178,10 +178,22 @@
 
 @utility marquee {
   animation: marquee 90s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 @utility marquee-lento {
   animation: marquee 140s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee,
+  .marquee-lento,
+  .fade-up {
+    animation: none !important;
+  }
 }
 
 @keyframes fade-up {

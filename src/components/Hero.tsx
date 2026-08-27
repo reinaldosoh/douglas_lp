@@ -32,7 +32,8 @@ function BotoesHero({ className = "" }: { className?: string }) {
 export function Hero() {
   return (
     <section className="relative overflow-x-hidden bg-background lg:min-h-screen">
-      <div className="pointer-events-none absolute -right-40 top-0 h-[700px] w-[700px] rounded-full bg-primary/10 blur-[180px]" />
+      {/* Gradiente leve no mobile — blur-[180px] derruba o Safari iOS por estouro de memória GPU */}
+      <div className="pointer-events-none absolute -right-40 top-0 h-[700px] w-[700px] rounded-full bg-primary/10 sm:bg-primary/[0.07] sm:blur-3xl lg:blur-[120px]" />
 
       <div className="relative mx-auto flex max-w-6xl min-w-0 flex-col px-5 sm:px-6 lg:min-h-screen">
         <header className="grid min-w-0 grid-cols-[minmax(0,1fr)_auto] items-center gap-3 py-6 sm:py-8">

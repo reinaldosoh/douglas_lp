@@ -7,7 +7,7 @@ const DESCRIPTION =
   "Simule capacidade de pagamento, redução pela Capag e abatimento com prejuízo fiscal em transação individual.";
 const OG_IMAGE = "/og-douglas-couto.png";
 
-export const Route = createFileRoute("/simulador-transacao-individual")({
+export const Route = createFileRoute("/simulador")({
   head: () => ({
     meta: [
       { title: TITLE },

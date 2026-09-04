@@ -10,33 +10,44 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as SimuladorTransacaoIndividualRouteImport } from './routes/simulador-transacao-individual'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SimuladorTransacaoIndividualRoute =
+  SimuladorTransacaoIndividualRouteImport.update({
+    id: '/simulador-transacao-individual',
+    path: '/simulador-transacao-individual',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/simulador-transacao-individual': typeof SimuladorTransacaoIndividualRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/simulador-transacao-individual': typeof SimuladorTransacaoIndividualRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/simulador-transacao-individual': typeof SimuladorTransacaoIndividualRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/simulador-transacao-individual'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/simulador-transacao-individual'
+  id: '__root__' | '/' | '/simulador-transacao-individual'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  SimuladorTransacaoIndividualRoute: typeof SimuladorTransacaoIndividualRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +59,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/simulador-transacao-individual': {
+      id: '/simulador-transacao-individual'
+      path: '/simulador-transacao-individual'
+      fullPath: '/simulador-transacao-individual'
+      preLoaderRoute: typeof SimuladorTransacaoIndividualRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  SimuladorTransacaoIndividualRoute: SimuladorTransacaoIndividualRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

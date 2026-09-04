@@ -1,3 +1,5 @@
+import { Link } from "@tanstack/react-router";
+
 import { EspecialidadesMarquee } from "@/components/EspecialidadesMarquee";
 import { IMAGEM_DOUGLAS } from "@/lib/imagens";
 import { LINK_WHATSAPP } from "@/Compartilhados/link_whatsapp";
@@ -18,6 +20,13 @@ function BotoesHero({ className = "" }: { className?: string }) {
       >
         SOLICITAR DIAGNÓSTICO
       </a>
+      <Link
+        to="/simulador-transacao-individual"
+        className="inline-flex w-full items-center justify-center gap-3 text-[10px] tracking-[0.18em] text-foreground/80 transition-colors hover:text-primary sm:w-auto sm:justify-start sm:text-[11px] sm:tracking-[0.24em]"
+      >
+        SIMULADOR DE TRANSAÇÃO
+        <span aria-hidden>→</span>
+      </Link>
       <a
         href="#atuacao"
         className="inline-flex w-full items-center justify-center gap-3 text-[10px] tracking-[0.18em] text-foreground/80 transition-colors hover:text-primary sm:w-auto sm:justify-start sm:text-[11px] sm:tracking-[0.24em]"

@@ -1,7 +1,9 @@
+import { Link } from "@tanstack/react-router";
+
 import { EspecialidadesMarquee } from "@/components/EspecialidadesMarquee";
 import { HeroVideoPlayer } from "@/components/HeroVideoPlayer";
 import { OfertasTributarias } from "@/components/OfertasTributarias";
-import { LINK_WHATSAPP, LINK_WHATSAPP_SIMULAR } from "@/Compartilhados/link_whatsapp";
+import { LINK_WHATSAPP } from "@/Compartilhados/link_whatsapp";
 
 const estiloContornoDourado =
   "inline-flex items-center border border-primary/60 px-4 py-2 text-[10px] font-medium tracking-[0.2em] text-primary sm:px-5 sm:py-2.5 sm:text-[11px] sm:tracking-[0.22em]";
@@ -53,14 +55,9 @@ export function Hero() {
 
             <EspecialidadesMarquee />
 
-            <a
-              href={LINK_WHATSAPP_SIMULAR}
-              target="_blank"
-              rel="noreferrer"
-              className={`mt-9 sm:mt-12 ${estiloBotaoPrimario}`}
-            >
+            <Link to="/simulador" className={`mt-9 sm:mt-12 ${estiloBotaoPrimario}`}>
               SIMULAR TRANSAÇÃO
-            </a>
+            </Link>
 
             <OfertasTributarias />
           </div>

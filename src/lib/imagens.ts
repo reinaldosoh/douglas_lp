@@ -1,4 +1,6 @@
 export const IMAGEM_DOUGLAS = "/images/douglas-office.jpg";
+export const VIDEO_DOUGLAS = "/douglas_video.mp4";
+export const THUMB_DOUGLAS = "/thumb.jpeg";
 
 export const LOGOS_CLIENTES = [
   { name: "Petrobras", url: "/logos/petrobras.png" },

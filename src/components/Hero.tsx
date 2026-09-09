@@ -1,33 +1,13 @@
 import { EspecialidadesMarquee } from "@/components/EspecialidadesMarquee";
-import { IMAGEM_DOUGLAS } from "@/lib/imagens";
-import { LINK_WHATSAPP } from "@/Compartilhados/link_whatsapp";
+import { HeroVideoPlayer } from "@/components/HeroVideoPlayer";
+import { OfertasTributarias } from "@/components/OfertasTributarias";
+import { LINK_WHATSAPP, LINK_WHATSAPP_SIMULAR } from "@/Compartilhados/link_whatsapp";
 
 const estiloContornoDourado =
   "inline-flex items-center border border-primary/60 px-4 py-2 text-[10px] font-medium tracking-[0.2em] text-primary sm:px-5 sm:py-2.5 sm:text-[11px] sm:tracking-[0.22em]";
 
-function BotoesHero({ className = "" }: { className?: string }) {
-  return (
-    <div
-      className={`flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:gap-8 ${className}`}
-    >
-      <a
-        href={LINK_WHATSAPP}
-        target="_blank"
-        rel="noreferrer"
-        className="inline-flex w-full items-center justify-center bg-primary px-6 py-3.5 text-center text-[10px] font-semibold leading-snug tracking-[0.18em] text-primary-foreground transition-opacity hover:opacity-90 sm:w-auto sm:px-9 sm:py-4 sm:text-[11px] sm:tracking-[0.24em]"
-      >
-        SOLICITAR DIAGNÓSTICO
-      </a>
-      <a
-        href="#atuacao"
-        className="inline-flex w-full items-center justify-center gap-3 text-[10px] tracking-[0.18em] text-foreground/80 transition-colors hover:text-primary sm:w-auto sm:justify-start sm:text-[11px] sm:tracking-[0.24em]"
-      >
-        VER ÁREAS DE ATUAÇÃO
-        <span aria-hidden>→</span>
-      </a>
-    </div>
-  );
-}
+const estiloBotaoPrimario =
+  "inline-flex w-full items-center justify-center bg-primary px-6 py-3.5 text-center text-[10px] font-semibold leading-snug tracking-[0.18em] text-primary-foreground transition-opacity hover:opacity-90 sm:w-auto sm:px-9 sm:py-4 sm:text-[11px] sm:tracking-[0.24em]";
 
 export function Hero() {
   return (
@@ -50,24 +30,8 @@ export function Hero() {
           </a>
         </header>
 
-        <div className="fade-up relative mx-auto w-full min-w-0 max-w-xs sm:max-w-sm lg:hidden">
-          <div className="absolute -inset-2 border border-primary/25 sm:-inset-3" />
-          <div className="relative overflow-hidden">
-            <img
-              src={IMAGEM_DOUGLAS}
-              alt="Douglas Couto, especialista em incentivos fiscais"
-              className="aspect-[4/5] w-full object-cover object-[50%_18%]"
-              width={1020}
-              height={1024}
-              fetchPriority="high"
-              decoding="async"
-            />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
-          </div>
-        </div>
-
         <div className="grid min-w-0 flex-1 items-center gap-8 pb-12 pt-4 sm:gap-14 sm:pb-24 sm:pt-6 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
-          <div className="fade-up min-w-0">
+          <div className="fade-up order-2 min-w-0 lg:order-1">
             <p className="mb-5 text-[10px] tracking-[0.28em] text-primary sm:mb-8 sm:text-[11px] sm:tracking-[0.32em]">
               ESTRATÉGIA TRIBUTÁRIA FEDERAL
             </p>
@@ -89,24 +53,19 @@ export function Hero() {
 
             <EspecialidadesMarquee />
 
-            <BotoesHero className="mt-9 sm:mt-12" />
+            <a
+              href={LINK_WHATSAPP_SIMULAR}
+              target="_blank"
+              rel="noreferrer"
+              className={`mt-9 sm:mt-12 ${estiloBotaoPrimario}`}
+            >
+              SIMULAR TRANSAÇÃO
+            </a>
+
+            <OfertasTributarias />
           </div>
 
-          <div className="fade-up relative mx-auto hidden w-full min-w-0 max-w-sm lg:block sm:max-w-md">
-            <div className="absolute -inset-2 border border-primary/25 sm:-inset-3" />
-            <div className="relative overflow-hidden">
-              <img
-                src={IMAGEM_DOUGLAS}
-                alt="Douglas Couto, especialista em incentivos fiscais"
-                className="aspect-[4/5] w-full object-cover object-[50%_18%]"
-                width={1020}
-                height={1024}
-                fetchPriority="high"
-                decoding="async"
-              />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
-            </div>
-          </div>
+          <HeroVideoPlayer className="fade-up order-1 mx-auto w-full min-w-0 max-w-xs sm:max-w-sm lg:order-2 lg:max-w-md" />
         </div>
       </div>
     </section>

@@ -1,6 +1,6 @@
 import { Crosshair, FileCheck2, BarChart3 } from "lucide-react";
 import { LogoMarquee } from "./LogoMarquee";
-import { LINK_WHATSAPP } from "@/Compartilhados/link_whatsapp";
+import { LINK_WHATSAPP, LINK_WHATSAPP_DIAGNOSTICO } from "@/Compartilhados/link_whatsapp";
 import { DisplayText } from "@/lib/display-text";
 
 
@@ -78,6 +78,18 @@ export function Clients() {
               ) : null}
             </article>
           ))}
+        </div>
+
+        <div className="mt-10 flex flex-col items-center gap-2 sm:mt-14">
+          <a
+            href={LINK_WHATSAPP_DIAGNOSTICO}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex w-full items-center justify-center bg-primary px-6 py-3.5 text-center text-[10px] font-semibold leading-snug tracking-[0.18em] text-primary-foreground transition-opacity hover:opacity-90 sm:w-auto sm:px-9 sm:py-4 sm:text-[11px] sm:tracking-[0.24em]"
+          >
+            SOLICITAR DIAGNÓSTICO
+          </a>
+          <p className="text-xs tracking-[0.12em] text-muted-foreground">(Pagar Menos Impostos)</p>
         </div>
 
         <div className="mt-14 border-y border-border py-10 sm:mt-20 sm:py-14">
